@@ -1,0 +1,122 @@
+.Scripts {
+    max-width: 1600px;
+    padding: 40px 20px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 100px;
+  }
+  
+  .experiencia .subtitulo {
+    color: #e0e0e0;
+  }
+  
+  .Scripts-texto {
+    font-size: 1.375rem;
+    line-height: 1.33;
+    max-width: 60ch;
+    margin-bottom: 70px;
+    color: #878a8f;
+  }
+  
+  .Scripts-texto strong {
+    color: #535151;
+  }
+  
+  .softwares {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 20px;
+    padding: 20px;
+    background: #e0edf7;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    position: relative;
+  }
+  .softwares:hover{
+    transition: transform 0.2s ease;
+    transform: scale(0.9);
+  }
+  
+  .softwares::before {
+    content: "";
+    display: block;
+    width: 4px;
+    height: 20px;
+    background: linear-gradient(#2F9C95, #40C9A2);
+    position: absolute;
+    top: 20px;
+    left: -4px;
+  }
+
+
+  .software-titulo {
+    margin-left: 70px;
+    font-size: 1.125rem;
+    line-height: 1.1;
+    font-weight: bold;
+  }
+  
+  .software-desc
+   {
+    font-size: 1.1rem;
+    line-height: 1.4;
+    color: #525252;
+  }
+  
+  .software-lang {
+    margin-left: 70px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-content: start;
+  }
+  
+  .software-lang li {
+    font-size: 0.875rem;
+    line-height: 1.4;
+    border-radius: 4px;
+    background: #d3e9fa;
+    padding: 5px 10px;
+  }
+  .github {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 20px 40px;
+  }
+  .github img {
+    transition: transform 0.5s ease;
+  }
+  .github img:hover {
+    -xpedu-transform: scale(-1.2);
+    transform: scale(-1.2);
+  }
+  
+  @media (max-width: 800px) {
+    .scriptss {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .experiencia .subtitulo {
+      color: #141414;
+    }
+    .scripts-texto {
+      font-size: 1.25rem;
+    }
+    .estrelinha {
+      position: initial;
+      order: 1;
+      width: initial;
+      text-align: left;
+    }
+  }
+  #greek{
+    color: #070000;
+  }
+  
+  @media (max-width: 400px) {
+    .empresa {
+      grid-template-columns: 1fr;
+    }
+  }

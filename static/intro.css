@@ -1,0 +1,153 @@
+.intro {
+    max-width: 75rem;
+    padding: 1.875rem 1.25rem;
+    margin: 6.375rem;
+    margin-left: 14rem;
+    gap: 100px;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    margin-bottom: 200px;
+  }
+  #SobreMim1 {
+    color: #878a8f;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    letter-spacing: 5.6px;
+    line-height: 20px;
+    padding: 1px 0px;
+    text-transform: uppercase;
+  }
+  #apresentacaoinicio {
+    color: #0f141e;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.75rem;
+    font-weight: 800;
+    letter-spacing: -0.045rem;
+    line-height: 50px;
+    margin: 0.938rem 0rem 0rem;
+    padding: 0.313rem 0rem 0.25rem;
+  }
+  .apresentacao h3 {
+    color: #878a8f;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 30px;
+    margin: 25px 0px 0px;
+    padding: 2px 0px 3px;
+  }
+  .apresentacao h4:hover {
+    transform: scale(0.9);
+  }
+  .apresentacao h4 {
+    transition: transform 0.4s ease;
+    color: #0f141e;
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 18px;
+  }
+  #ou {
+    color: #878a8f;
+    display: inline;
+    font-weight: 500;
+    line-height: 25px;
+    margin: 0px 15px;
+  }
+  .linki {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .linki img {
+    transition: transform 0.3s ease;
+  }
+  .linki img:hover {
+    -xpedu-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  
+  #algunsP {
+    color: #878a8f;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    letter-spacing: 5.6px;
+    line-height: 20px;
+    padding: 1px 0px;
+  }
+  #Proj {
+    color: #0f141e;
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 18px;
+  }
+  @media (max-width: 800px) {
+    .intro {
+      grid-template-columns: 1fr 1fr;
+      font-size: 1rem;
+    }
+    .apresentacaoinicio {
+      font-size: 1rem;
+    }
+  }
+  @media (max-width: 500px) {
+    .intro {
+      font-size: 0.6rem;
+    }
+  }
+  @media (max-width: 850px) {
+    .intro h1 {
+      font-size: 2rem;
+    }
+  }
+  
+  @media (max-width: 800px) {
+    .intro {
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+    .intro h1::before {
+      width: 30px;
+      height: 10px;
+      left: 1rem;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .introducao {
+      grid-template-columns: 1fr;
+    }
+    .introducao img {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 700px) {
+    .intro {
+      margin-left: 1rem;
+    }
+  }
+  @media (max-width: 600px) {
+    .intro {
+      margin-left: 1rem;
+    }
+  }
+  @media (max-width: 500px) {
+    .intro {
+      margin-left: 1rem;
+    }
+  }
+  @media (max-width: 400px) {
+    .intro {
+      margin-left: 1rem;
+    }
+  }
+  @media (max-width: 300px) {
+    .intro {
+      margin-left: 1rem;
+    }
+  }
