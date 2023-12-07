@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Log Viewer</title>
+</head>
+<body>
+    <div id="log-container">
+        {% for log in logs %}
+            <p style="color: blue;">=================================================================</p>
+            <p>Arquivo: {{ log.arquivo }}</p>
+            <p>Colunas vazias: {{ log.colunas_vazias|join(', ') }}</p>
+            <p><strong>Data e Hora:</strong> {{ log.data_hora }}</p>
+            <p>Quantidade de NaN: {{ log.quantidade_nan }}</p>
+            <br>  <!-- Adiciona uma quebra de linha entre os logs -->
+        {% endfor %}
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="{{ url_for('static', filename='endpoint.js') }}"></script>
+</body>
+</html>
+
+
+<p style="color: blue;">=================================================================</p>
+<p>Arquivo: X:\ARQUIVOS\3810-GTSS\BD\arquivo1.xlsx</p>
+<p>Colunas vazias: ['Unnamed: 3']</p>
+<p><strong>Data e Hora:</strong> 2023-12-07 16:27:48</p>
+<p>Quantidade de NaN: 118</p>
+
+<p style="color: red;">#############################################################
+<p style="color: red;">O arquivo X:\ARQUIVOS\3810-GTSS\BD\arquivo1.xlsx veio com 1 ou mais COLUNAS VAZIAS
+<p>Colunas vazias: ['Unnamed: 3']</p>
+<p style="color: red;">#############################################################
+
+<p style="color: blue;">=================================================================</p>
+<p>Arquivo: X:\ARQUIVOS\3810-GTSS\BD\arquivo1.xlsx</p>
+<p>Colunas vazias: ['Unnamed: 3']</p>
+<p><strong>Data e Hora:</strong> 2023-12-07 16:27:48</p>
+<p>Quantidade de NaN: 118</p>
+
+<p style="color: red;">#############################################################
+<p style="color: red;">O arquivo X:\ARQUIVOS\3810-GTSS\BD\arquivo1.xlsx veio com 1 ou mais COLUNAS VAZIAS
+<p>Colunas vazias: ['Unnamed: 3']</p>
+<p style="color: red;">#############################################################
