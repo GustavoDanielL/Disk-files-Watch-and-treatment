@@ -5,11 +5,11 @@
 }
 
 .log-table th, .log-table td {
-    border: 1px solid #ddd;
+    border: 1px solid #df1616;
     padding: 8px;
     text-align: left;
 }
 
 .log-table th {
-    background-color: #f2f2f2;
+    background-color: #dd1010;
 }

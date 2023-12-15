@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 logContainer.innerHTML += '<p><strong>Data e Hora:</strong> ' + log.data_hora + '</p>';
                 logContainer.innerHTML += '<p>Tamanho (MB): ' + log.tamanho_mb.toFixed(2) + '</p>';  // Ajuste para exibir com duas casas decimais
                 logContainer.innerHTML += '<p>Quantidade de NaN: ' + log.quantidade_nan + '</p>';
+                logContainer.innerHTML += '<p>DataFrame Vazio? ' + log.is_dataframe_empty + '</p>';
                 logContainer.innerHTML += '<br>';  // Adiciona uma quebra de linha entre os logs
             });
         })
@@ -23,6 +24,6 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log('Endpoint.js executado com sucesso!');
     }
 
-    setInterval(atualizarLogs, 30000);
+    setInterval(atualizarLogs, 120000);
     atualizarLogs();  // Execute a função uma vez ao carregar a página
 });

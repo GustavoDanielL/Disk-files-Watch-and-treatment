@@ -17,6 +17,7 @@ class ArquivoHandler(FileSystemEventHandler):
     def __init__(self, log_content):
         super().__init__()
         self.log_content = log_content
+        
 
     def processar_arquivo(self, caminho_arquivo):
         print("═︎═︎")
@@ -52,22 +53,28 @@ class ArquivoHandler(FileSystemEventHandler):
                     logs_existentes = json.load(json_file)
             except FileNotFoundError:
                 logs_existentes = []
+            #================ Verificar se o arquivo já existe na lista de logs ================
+            arquivo_existente = next((log for log in logs_existentes if log['arquivo'] == caminho_arquivo), None)
 
-            #================ Adicionar logs a uma lista ================
-            log = {
-                'arquivo': caminho_arquivo,
-                'colunas_vazias': colunas_vazias,
-                'data_hora': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                'quantidade_nan': quantidade_nan,
-                'tamanho_mb': tamanho_arquivo,
-            }
+            if not arquivo_existente:
+
+            #================ ADD LOG ================
+                log = {
+                    'arquivo': caminho_arquivo,
+                    'colunas_vazias': colunas_vazias,
+                    'data_hora': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                    'quantidade_nan': quantidade_nan,
+                    'tamanho_mb': tamanho_arquivo,
+                    'is_dataframe_empty': df.empty,  
+                }
+            #================ FILTRAR REPETIDOS E CONVERTER PARA NATIVO ================
+            seen_files = {entry['arquivo'] for entry in logs_existentes}
+            if caminho_arquivo not in seen_files:
+                logs_existentes.append(log)
+                logs_existentes = self.converter_para_tipo_nativo(logs_existentes)
+                seen_files.add(caminho_arquivo)
             
-            #================ TRAZER LOGS EXISTENTES, CONVERSÃO E ADIÇÃO DE LOGS ================
-            logs_existentes.append(log)
-            # # Converter valores não serializáveis para tipos nativos Python
-            logs_existentes = self.converter_para_tipo_nativo(logs_existentes)
-            # # # Adicionar o novo log aos logs existentes
-            # self.log_content.append(log)
+
             
             #================ Salvar a lista em um arquivo JSON ================
             with open('logs.json', 'w') as json_file:
